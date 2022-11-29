@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Character Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://iconarchive.com/download/i3532/artua/star-wars/Darth-Vader.ico" type="image/x-icon">
+</head>
+
+<body>
+    <h1 class="heading">Star Wars Character</h1>
+    <div class="container">
+        <div class="cards">
+            <div class="card-img">
+                <img src="" class="character-img" alt="">
+            </div>
+            <div class="card-body">
+                <h1 class="name"></h1>
+            </div>
+            <div class="card-footer">
+                <button>Generate Another</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" charset="utf-8"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").on("click", function() {
+                const randomNumber = Math.ceil(Math.random() * 88)
+                $.get(`https://rawcdn.githack.com/akabab/starwars-api/0.2.1/api/id/${randomNumber}.json`,
+                    function(data) {
+                        $("h1.name").text(data['name'])
+                        $(".character-img").attr("src", data['image'])
+                    })
+
+            })
+        })
+    </script>
+</body>
+
+</html>
