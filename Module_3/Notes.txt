@@ -1,0 +1,5 @@
+Use #id name to go to a particular thing on our website.
+
+Using Favicon will Help you to Add a Shortcut icon for your page!
+
+In pathing to move to the upper folder use (../)
